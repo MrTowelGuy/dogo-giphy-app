@@ -11,6 +11,7 @@ export default function App() {
 
     const response = await fetch(gifSrc);
     const data = await response.json();
+    console.log("img url", data.message);
     setGifSrc(data);
   };
 
@@ -19,7 +20,7 @@ export default function App() {
       <h1>Dog Photo App</h1>
       <Button handleSubmitFromApp={handleSubmit} />
       {}
-      {gifSrc.image_url ? (
+      {gifSrc.message ? (
         <Gifs gifSrc={gifSrc} />
       ) : (
         <h2>Let's see your pupper!</h2>
